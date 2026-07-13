@@ -3,7 +3,10 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import AddDonor from './components/AddDonor'
+import ViewDonors from './components/ViewDonors'
+import Home from './components/Home.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -14,8 +17,9 @@ function App() {
 
         <Routes>
 
-          <Route />
-          <Route />
+          <Route path='/' element={<Home />} />
+          <Route path='/add' element={<AddDonor />} />
+          <Route path='/view' element={<ViewDonors />} />
 
         </Routes>
 
