@@ -43,6 +43,15 @@ const NavigationBar = () => {
                                     className="nav-link text-white fw-semibold"
                                     to="/"
                                 >
+                                    Home
+                                </Link>
+                            </li>
+
+                            <li className="nav-item mx-2">
+                                <Link
+                                    className="nav-link text-white fw-semibold"
+                                    to="/add"
+                                >
                                     Add Donors
                                 </Link>
                             </li>
