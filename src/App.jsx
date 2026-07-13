@@ -5,6 +5,7 @@ import heroImg from './assets/hero.png'
 import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import AddDonor from './components/AddDonor'
+import ViewDonors from './components/ViewDonors'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -17,7 +18,7 @@ function App() {
 
           <Route path='/' element={<AddDonor />} />
           <Route path='/add' element={<AddDonor />} />
-          <Route path='/view' element={<AddDonor />} />
+          <Route path='/view' element={<ViewDonors />} />
 
         </Routes>
 
