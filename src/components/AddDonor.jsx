@@ -17,15 +17,14 @@ const AddDonor = () => {
     });
 
 
-
     const inputHandler = (event) => {
         setFormData({ ...formData, [event.target.name]: event.target.value })
     }
 
     const readValue = () => {
-        console.log(input)
+        console.log(formData)
 
-        axios.post("https://host-demo-app.onrender.com/api/add-course", formData).then(
+        axios.post("https://host-demo-app.onrender.com/api/add-donor", formData).then(
 
             (response) => (
                 console.log(response.data)
@@ -33,7 +32,7 @@ const AddDonor = () => {
 
         ).catch(
             (error) => (
-                console.error("Error Adding Course", error)
+                console.error("Error Adding Course", error.response?.data)
             )
         )
 
@@ -83,6 +82,7 @@ const AddDonor = () => {
                                     onChange={inputHandler}
                                     required
                                 >
+                                    <option value="">--Select Gender--</option>
                                     <option value="Male">Male</option>
                                     <option value="Female">Female</option>
                                     <option value="Other">Other</option>
@@ -98,6 +98,7 @@ const AddDonor = () => {
                                     onChange={inputHandler}
                                     required
                                 >
+                                    <option value="">--Select Blood Group--</option>
                                     <option value="A+">A+</option>
                                     <option value="A-">A-</option>
                                     <option value="B+">B+</option>
@@ -114,7 +115,7 @@ const AddDonor = () => {
                                 <label className='form-label'>Phone: </label>
                                 <input
                                     className='form-control'
-                                    type="number"
+                                    type="tel"
                                     name="phone"
                                     value={formData.phone}
                                     onChange={inputHandler}
